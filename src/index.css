@@ -2,27 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .bounce:hover {
-  animation: bounce 1.5s ease infinite;
-}
-
-nav#nav {
-  transition: visibility ease-in-out 1s;
-}
-
-.goup {
-  top: 0;
-  animation: goup 1.5s ease;
-}
-
-.test {
-  opacity: 1;
-  animation: test 2s ease;
+  animation: bounce 1.5s ease-in-out infinite;
 }
 
 @keyframes bounce {
@@ -31,11 +12,19 @@ nav#nav {
 	60% {transform: translateY(-15px);}
 }
 
-@keyframes goup {
-  0% { top: 50%; }
-  100% { top: 0; }
+.fadeIn {
+  animation: 1s fadeIn ease-out;
+  animation-fill-mode: forwards;
+
+  visibility: hidden;
 }
 
-@keyframes test {
-  100% { opacity: 1;}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
