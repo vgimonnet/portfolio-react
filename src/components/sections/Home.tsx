@@ -9,6 +9,8 @@ const Home = () => {
 
   const { setActiveSection } = useContext(activeSectionContext);
 
+  const [titleAnimation, setTitleAnimation] = useState(false);
+
   // useEffect(() => {
   //   const today = new Date();
   //   const birthdateDate = new Date('1998/04/21');
@@ -23,8 +25,9 @@ const Home = () => {
   // }, []);
 
   useEffect(() => {
-    const titleContainer = document.getElementById('title-container');
-    const timeout = setTimeout(() => {
+    if (titleAnimation) {
+      const titleContainer = document.getElementById('title-container');
+      const timeout = setTimeout(() => {
       if (index < INTRO.length && titleContainer) {
         if (index === 0) {
           const tmp = document.getElementById('tmp');
@@ -32,19 +35,34 @@ const Home = () => {
         }
         titleContainer.innerHTML += INTRO[index];
         setIndex(index+1);
-      }
-    }, 90);
-
-    if (index >= INTRO.length) {
-      clearTimeout(timeout);
-      const nav = document.getElementById('nav');
-      if (nav) {
-        nav.classList.add('fadeIn');
+        }
+      }, 110);
+      
+      if (index >= INTRO.length) {
+        setTitleAnimation(false);
+        clearTimeout(timeout);
+        const nav = document.getElementById('nav');
+        if (nav) {
+          nav.classList.add('fadeIn');
+        }
       }
     }
     
     return () => {};
-  }, [index])
+  }, [index, titleAnimation])
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      const logo = document.getElementById('logo');
+      if (logo) {
+        logo.classList.add('h-96')
+      }
+      setTimeout(() => {
+        setTitleAnimation(true);
+      }, 250);
+    }, 250);      
+  }, []);
 
   return (
     <section id="home" className="h-full relative flex justify-around items-center flex-col">
@@ -52,7 +70,7 @@ const Home = () => {
         <span id="tmp" className="invisible">Welcome on my portfolio !</span>
       </h1>
 
-      <img src="public/vg.svg" alt="VG Tag logo" className="w-96" />
+      <img src="public/vg.svg" alt="VG Tag logo" id="logo" className="h-full transition-all duration-1000" />
 
       <nav id="nav" className="flex flex-row justify-center gap-24 mx-auto transition invisible">
         <button onClick={() => setActiveSection('about')} className="bounce px-4 py-2 border border-white rounded w-36">About</button>
