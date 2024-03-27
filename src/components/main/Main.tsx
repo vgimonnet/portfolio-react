@@ -11,7 +11,7 @@ const Main: FunctionComponent = () => {
   const { activeSection } = useContext(activeSectionContext);
 
   return (
-    <main className='h-full p-36 border'>
+    <main className='h-full p-8 md:p-16 lg:p-24 xl:p-32 border'>
       <Transition
         className="h-full"
         show={activeSection === 'home'}

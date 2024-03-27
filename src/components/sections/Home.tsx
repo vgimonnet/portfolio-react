@@ -56,7 +56,7 @@ const Home = () => {
     setTimeout(() => {
       const logo = document.getElementById('logo');
       if (logo) {
-        logo.classList.add('h-96')
+        logo.className += ' h-36 sm:h-36 md:h-48 lg:h-64 xl:h-96'
       }
       setTimeout(() => {
         setTitleAnimation(true);
@@ -65,14 +65,22 @@ const Home = () => {
   }, []);
 
   return (
-    <section id="home" className="h-full relative flex justify-around items-center flex-col">
-      <h1 id="title-container" className="text-center text-7xl">
+    <section id="home" className="h-full relative flex justify-center items-center flex-col gap-16 md:gap-16 lg:gap-24">
+      <h1 
+        id="title-container" 
+        className="
+          text-center text-4xl
+          md:text-4xl
+          lg:text-5xl
+          xl:text-7xl
+        "
+      >
         <span id="tmp" className="invisible">Welcome on my portfolio !</span>
       </h1>
 
       <img src="public/vg.svg" alt="VG Tag logo" id="logo" className="h-full transition-all duration-1000" />
 
-      <nav id="nav" className="flex flex-row justify-center gap-24 mx-auto transition invisible">
+      <nav id="nav" className="flex flex-col md:flex-row justify-center gap-8 md:gap-24 mx-auto transition invisible">
         <button onClick={() => setActiveSection('about')} className="bounce px-4 py-2 border border-white rounded w-36">About</button>
         <button onClick={() => setActiveSection('projects')}  className="bounce px-4 py-2 border border-white rounded w-36">Projects</button>
         <button onClick={() => setActiveSection('contact')} className="bounce px-4 py-2 border border-white rounded w-36">Contact</button>
