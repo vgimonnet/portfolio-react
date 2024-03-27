@@ -11,8 +11,18 @@
   animation: bounce 1.5s ease infinite;
 }
 
+nav#nav {
+  transition: visibility ease-in-out 1s;
+}
+
 .goup {
-  animation: goup 2s ease;
+  top: 0;
+  animation: goup 1.5s ease;
+}
+
+.test {
+  opacity: 1;
+  animation: test 2s ease;
 }
 
 @keyframes bounce {
@@ -24,4 +34,8 @@
 @keyframes goup {
   0% { top: 50%; }
   100% { top: 0; }
+}
+
+@keyframes test {
+  100% { opacity: 1;}
 }
