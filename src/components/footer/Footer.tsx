@@ -9,6 +9,7 @@ const Footer = () => {
   return (
     <>
       <Transition
+        className="z-10"
         show={activeSection !== 'home'}
         enter="transition-all ease-in-out duration-500 delay-[200ms]"
         enterFrom="opacity-0 translate-y-6"
