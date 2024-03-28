@@ -39,13 +39,12 @@ const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
                         {project.description}
                       </p>
                   </div>
-                  <div className="flex items-center justify-center p-4 md:p-5 border-t rounded-b border-gray-600">
-                      <p className="text-base leading-relaxed text-gray-400">Technos</p>
-                      <ul>
-                        { project.technos && project.technos.map((techno: Techno) => {
+                  <div className="p-4 md:p-5 border-t rounded-b border-gray-600">
+                    <ul className="flex flex-row flex-wrap items-center justify-center text-gray-400">
+                        { project.technos && project.technos.map((techno: Techno, index: number) => {
                           return (
-                            <li>
-                              <span aria-hidden="true">{techno.picture}</span>
+                            <li className="w-1/2 flex flex-col justify-center items-center p-4" key={index}>
+                              <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: techno.picture }}></span>
                               <p>{techno.name}</p>
                             </li>
                           );
