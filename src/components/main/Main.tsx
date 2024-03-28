@@ -11,7 +11,7 @@ const Main: FunctionComponent = () => {
   const { activeSection } = useContext(activeSectionContext);
 
   return (
-    <main className='h-full p-8 md:p-16 lg:p-24 xl:p-32 border'>
+    <main className='h-full p-8 md:p-16 lg:p-24 xl:p-32'>
       <Transition
         className="h-full"
         show={activeSection === 'home'}
@@ -25,6 +25,7 @@ const Main: FunctionComponent = () => {
         <Home />
       </Transition>
       <Transition
+        className="h-full"
         show={activeSection === 'about'}
         enter="transition-all ease-in-out duration-500 delay-[150ms]"
         enterFrom="opacity-0 translate-y-6"
@@ -36,6 +37,7 @@ const Main: FunctionComponent = () => {
         <About />
       </Transition>
       <Transition
+        className="h-full"
         show={activeSection === 'projects'}
         enter="transition-all ease-in-out duration-500 delay-[150ms]"
         enterFrom="opacity-0 translate-y-6"
@@ -47,6 +49,7 @@ const Main: FunctionComponent = () => {
         <Projects />
       </Transition>
       <Transition
+        className="h-full"
         show={activeSection === 'contact'}
         enter="transition-all ease-in-out duration-500 delay-[150ms]"
         enterFrom="opacity-0 translate-y-6"

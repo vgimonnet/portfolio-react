@@ -65,7 +65,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section id="home" className="h-5/6 relative flex justify-center items-center flex-col gap-16 md:gap-16 lg:gap-24">
+    <section id="home" className="h-5/6 md:h-full relative flex justify-center items-center flex-col gap-16 md:gap-16 lg:gap-24">
       <h1 
         id="title-container" 
         className="

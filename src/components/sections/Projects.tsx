@@ -1,58 +1,66 @@
-type Project = {
-  title: string;
-  description: string;
-  link: string;
-  picture: string;
-}
-
-const PROJECTS: Project[] = [
-  {
-    title: 'UCA Sport',
-    description: 'Gestion des activité culturelles et sportives de l\'université de Nice.',
-    link: 'https://sport.univ-cotedazur.fr/fr/',
-    picture: 'public/projects/uca.png'
-  },
-  {
-    title: 'UCA Sport',
-    description: 'Gestion des activité culturelles et sportives de l\'université de Nice.',
-    link: 'https://sport.univ-cotedazur.fr/fr/',
-    picture: 'public/projects/uca.png'
-  },
-  {
-    title: 'UCA Sport',
-    description: 'Gestion des activité culturelles et sportives de l\'université de Nice.',
-    link: 'https://sport.univ-cotedazur.fr/fr/',
-    picture: 'public/projects/uca.png'
-  }
-]
+import { useEffect, useState } from "react";
+import { PROJECTS } from "../../data/projects.data";
+import { Project } from "../../types/project.type";
+import ProjectCard from "../project/ProjectCard";
+import { Transition } from "@headlessui/react";
 
 const Projects = () => {
 
+  const [showGoUpButton, setShowGoUp] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = (event) => {
+      setShowGoUp(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  }
+
   return (
-    <section id="projects" className="h-full relative flex justify-around items-center flex-col my-20 ">
+    <section id="projects" className="h-full relative flex items-center flex-col my-20 ">
       <h1 
         className="
           text-4xl lg:text-6xl font-bold relative pb-2
           before:content[''] before:absolute before:w-1/2 before:h-1 before:bottom-0 before:left-1/4 before:border before:border-white before:bg-white before:rounded"
       >Projects</h1>
 
-      {/* <ul className="flex flex-row justify-start items-center flex-nowrap overflow-auto h-8/10 mt-10 gap-2"> */}
-      <ul className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">      
-        {
-          PROJECTS.map((project: Project) => {
-            return (
-              // <li className="flex flex-col justify-center items-center gap-2 w-[28rem] border rounded p-2" key={project.title}>
-              <li className="carousel-item" key={project.title}>
-                <a href={project.link} target="_blank">
-                  <img src={project.picture} alt={project.title} className="h-48" />
-                </a>
-                <p>{project.title}</p>
-                <p>{project.description}</p>
-              </li>
-            )
-          })
-        }
-      </ul>
+      <div className="
+        flex flex-col flex-no-wrap items-center w-full rounded mt-10 pb-20
+        md:flex-row md:overflow-x-auto
+      ">
+        { PROJECTS.map((project: Project, index: number) => <ProjectCard project={project}  key={index} />) }
+      </div>
+
+      <Transition
+        className="h-full md:invisible"
+        show={showGoUpButton}
+        enter="transition-all ease-in-out duration-200"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-all ease-in-out duration-0"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <button 
+          className="
+          bg-gray-800 text-white border rounded-full fixed bottom-1/2 right-3 cursor-pointer box-border transition-all duration-500 hover:bg-white hover:text-gray-800
+            w-10 h-10 flex items-center justify-center
+          "
+          onClick={scrollToTop}
+        >
+          <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
+          </svg>
+        </button>
+      </Transition>
     </section>
   )
 };

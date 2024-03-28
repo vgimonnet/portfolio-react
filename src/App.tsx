@@ -8,6 +8,7 @@ function App() {
 
   return (
     <>
+      <div className="fixed h-screen w-screen border"></div>
       <ActiveSectionContextProvider>
         <Header />
         <Main />
