@@ -28,8 +28,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           onClick={() => setShowModal(true)}
         >
           Voir
-
-          { showModal ? 'true' : 'false' }
         </button>
       </div>
 

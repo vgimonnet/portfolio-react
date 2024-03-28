@@ -25,7 +25,7 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="h-full relative flex items-center flex-col my-20 ">
+    <section id="projects" className="h-full relative flex items-center flex-col mt-20 ">
       <h1 
         className="
           text-4xl lg:text-6xl font-bold relative pb-2
@@ -40,7 +40,7 @@ const Projects = () => {
       </div>
 
       <Transition
-        className="h-full md:invisible"
+        className="h-full md:hidden"
         show={showGoUpButton}
         enter="transition-all ease-in-out duration-200"
         enterFrom="opacity-0"

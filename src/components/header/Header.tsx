@@ -62,7 +62,7 @@ const Header: FunctionComponent = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <header className="fixed top-0 bottom-0 left-0 right-0 m-auto py-1 w-fit z-10">
+        <header className="fixed top-0 left-0 right-0 m-auto py-1 w-fit z-10">
           <nav className=" bg-gray-800 z-10">
             <ul className="flex flex-row justify-center items-center no-wrap border rounded border-neutral-400 w-fit mx-auto my-8">
               { items.map((item: HeaderItem) => {

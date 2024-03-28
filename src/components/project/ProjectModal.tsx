@@ -11,7 +11,7 @@ const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
 
   return (
     <Transition
-      className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+      className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-screen"
       show={isOpen}
       enter="transition-all ease-in-out duration-500 delay-[150ms]"
       enterFrom="opacity-0 translate-y-6"
@@ -20,7 +20,7 @@ const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
-        <div id="default-modal" tabIndex={-1} aria-hidden="true" className="flex overflow-y-auto overflow-x-hidden bg-overlay bg-blend-lighten fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full ">
+        <div id="default-modal" tabIndex={-1} aria-hidden="true" className="flex overflow-y-auto overflow-x-hidden bg-overlay bg-blend-lighten fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-screen ">
           <div className="relative p-4 w-full max-w-2xl max-h-full">
               <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                   <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
@@ -53,16 +53,17 @@ const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
                       </ul>
                   </div>
                   <div className="flex items-center justify-center p-4 md:p-5 border-t rounded-b border-gray-600">
-                    {/* { project.link && 
+                    { project.link && 
                       <a
                         href={project.link} 
+                        target="_blank"
                         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                           Go on website
                       </a>
                     }
-                    { !project.link && ( */}
+                    { !project.link && (
                       <p className="text-gray-400">Restricted access website</p>
-                    {/* ) } */}
+                    ) }
                   </div>
               </div>
           </div>
