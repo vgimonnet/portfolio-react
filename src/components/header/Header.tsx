@@ -71,7 +71,7 @@ const Header: FunctionComponent = () => {
                   <li 
                     onClick={() => setActiveSection(item.anchor)} 
                     key={item.anchor}
-                    className={ (activeSection === item.anchor ? 'text-blue-500 font-weight ' : 'text-white') +  " hover:cursor-pointer w-16 sm:w-20 md:w-24 lg:w-32 font-medium no-underline transition-all duration-500 hover:underline md:px-4 py-2 rounded flex justify-center items-center md:flex-col gap-1"}>
+                    className={ (activeSection === item.anchor ? 'text-blue-500 font-weight ' : 'text-white') +  " hover:cursor-pointer hover:text-blue-500 w-16 sm:w-20 md:w-24 lg:w-32 font-medium no-underline transition-all duration-500 md:px-4 py-2 rounded flex justify-center items-center md:flex-col gap-1"}>
                       <span dangerouslySetInnerHTML={{ __html: item.svg }}></span>
                       <span className="hidden md:block">{ item.label }</span>
                   </li>

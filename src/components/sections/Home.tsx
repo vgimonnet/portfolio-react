@@ -36,7 +36,7 @@ const Home = () => {
         titleContainer.innerHTML += INTRO[index];
         setIndex(index+1);
         }
-      }, 110);
+      }, 75);
       
       if (index >= INTRO.length) {
         setTitleAnimation(false);
@@ -61,11 +61,11 @@ const Home = () => {
       setTimeout(() => {
         setTitleAnimation(true);
       }, 250);
-    }, 250);      
+    }, 250);
   }, []);
 
   return (
-    <section id="home" className="h-full relative flex justify-center items-center flex-col gap-16 md:gap-16 lg:gap-24">
+    <section id="home" className="h-5/6 relative flex justify-center items-center flex-col gap-16 md:gap-16 lg:gap-24">
       <h1 
         id="title-container" 
         className="

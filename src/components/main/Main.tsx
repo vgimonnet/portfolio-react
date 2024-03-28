@@ -15,10 +15,10 @@ const Main: FunctionComponent = () => {
       <Transition
         className="h-full"
         show={activeSection === 'home'}
-        enter="transition-all ease-in-out duration-500 delay-[200ms]"
+        enter="transition-all ease-in-out duration-500 delay-[150ms]"
         enterFrom="opacity-0 translate-y-6"
         enterTo="opacity-100 translate-y-0"
-        leave="transition-all ease-in-out duration-500"
+        leave="transition-all ease-in-out duration-0"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
@@ -26,10 +26,10 @@ const Main: FunctionComponent = () => {
       </Transition>
       <Transition
         show={activeSection === 'about'}
-        enter="transition-all ease-in-out duration-500 delay-[200ms]"
+        enter="transition-all ease-in-out duration-500 delay-[150ms]"
         enterFrom="opacity-0 translate-y-6"
         enterTo="opacity-100 translate-y-0"
-        leave="transition-all ease-in-out duration-500"
+        leave="transition-all ease-in-out duration-0"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
@@ -37,10 +37,10 @@ const Main: FunctionComponent = () => {
       </Transition>
       <Transition
         show={activeSection === 'projects'}
-        enter="transition-all ease-in-out duration-500 delay-[200ms]"
+        enter="transition-all ease-in-out duration-500 delay-[150ms]"
         enterFrom="opacity-0 translate-y-6"
         enterTo="opacity-100 translate-y-0"
-        leave="transition-all ease-in-out duration-500"
+        leave="transition-all ease-in-out duration-0"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
@@ -48,10 +48,10 @@ const Main: FunctionComponent = () => {
       </Transition>
       <Transition
         show={activeSection === 'contact'}
-        enter="transition-all ease-in-out duration-500 delay-[200ms]"
+        enter="transition-all ease-in-out duration-500 delay-[150ms]"
         enterFrom="opacity-0 translate-y-6"
         enterTo="opacity-100 translate-y-0"
-        leave="transition-all ease-in-out duration-500"
+        leave="transition-all ease-in-out duration-0"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >

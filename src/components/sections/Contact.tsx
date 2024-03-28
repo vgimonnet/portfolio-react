@@ -2,7 +2,11 @@ const Contact = () => {
 
   return (
     <section id="contact" className="h-full relative flex justify-around items-center flex-col my-20 ">
-      <h1 className="text-4xl lg:text-6xl font-bold">Contact</h1>
+      <h1 
+        className="
+          text-4xl lg:text-6xl font-bold relative pb-2
+          before:content[''] before:absolute before:w-1/2 before:h-1 before:bottom-0 before:left-1/4 before:border before:border-white before:bg-white before:rounded"
+      >Contact</h1>
 
       <nav className="flex flex-col lg:flex-row justify-center items-center gap-16 mt-16 lg:gap-36 lg:mt-36">
         <a href="https://www.linkedin.com/in/valentin-gimonnet-73133b182/" className="flex flex-col justify-center items-center gap-4 hover:animate-pulse hover:cursor-pointer hover:underline transition-all duration-500" target="_blank">
