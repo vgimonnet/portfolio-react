@@ -35,6 +35,7 @@ const Projects = () => {
       <div className="
         flex flex-col flex-no-wrap items-center w-full rounded mt-10 pb-20
         md:flex-row md:overflow-x-auto
+        lg:mt-20
       ">
         { PROJECTS.map((project: Project, index: number) => <ProjectCard project={project}  key={index} />) }
       </div>

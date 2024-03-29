@@ -23,10 +23,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <div className="
       flex p-4 gap-4 w-64 text-gray-800
+      sm:w-96
       md:w-fit
     ">
       <div className="border rounded-xl bg-white px-4 py-6 flex flex-col items-center gap-4 w-80">
-        <img className="rounded" src={ project.picture } alt={ project.title } />
+        <img className="rounded border" src={ project.picture } alt={ project.title } />
         <h1 className="text-lg font-bold tracking-wider">
           { project.title }
         </h1>
