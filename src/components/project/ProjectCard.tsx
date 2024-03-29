@@ -27,7 +27,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       md:w-fit
     ">
       <div className="border rounded-xl bg-gray-800 px-4 py-6 flex flex-col items-center gap-4 w-80">
-        <img className="rounded border" src={ project.picture } alt={ project.title } />
+        <img className="rounded border" src={ project.picture } alt={ project.title } loading="lazy" />
         <h1 className="text-lg font-bold tracking-wider">
           { project.title }
         </h1>

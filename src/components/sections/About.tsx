@@ -43,7 +43,7 @@ const About = () => {
         className="
           text-4xl lg:text-6xl font-bold relative pb-2
           before:content[''] before:absolute before:w-1/2 before:h-1 before:bottom-0 before:left-1/4 before:border before:border-white before:bg-white before:rounded"
-      >About</h1>
+      >A propos</h1>
 
       <p className="mt-16">
         Développeur web passionné avec une expertise approfondie dans la conception, le développement et la maintenance de sites web interactifs.

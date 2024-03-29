@@ -12,7 +12,7 @@ const Header: FunctionComponent = () => {
 
   const items: HeaderItem[] = [
     {
-      label: 'Home',
+      label: 'Accueil',
       anchor: 'home',
       svg: `
         <svg class="w-6 h-6 lg:w-10 lg:h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -21,7 +21,7 @@ const Header: FunctionComponent = () => {
       `,
     },
     {
-      label: 'About',
+      label: 'A propos',
       anchor: 'about',
       svg: `
         <svg class="w-6 h-6 lg:w-10 lg:h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -30,7 +30,7 @@ const Header: FunctionComponent = () => {
       `,
     },
     {
-      label: 'Projects',
+      label: 'Projets',
       anchor: 'projects',
       svg: `
         <svg class="w-6 h-6 lg:w-10 lg:h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

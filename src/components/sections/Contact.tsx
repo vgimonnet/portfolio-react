@@ -32,8 +32,6 @@ const Contact = () => {
         </a>
       </nav>
 
-      <form action="" method="post"></form>
-
     </section>
   )
 };
