@@ -22,11 +22,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <div className="
-      flex p-4 gap-4 w-64 text-gray-800
+      flex p-4 gap-4 w-64 text-white
       sm:w-96
       md:w-fit
     ">
-      <div className="border rounded-xl bg-white px-4 py-6 flex flex-col items-center gap-4 w-80">
+      <div className="border rounded-xl bg-gray-800 px-4 py-6 flex flex-col items-center gap-4 w-80">
         <img className="rounded border" src={ project.picture } alt={ project.title } />
         <h1 className="text-lg font-bold tracking-wider">
           { project.title }
@@ -35,7 +35,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           { project.description }
         </p>
         <button
-          className="text-sm font-medium tracking-wider text-gray-800 underline hover:no-underline duration-500"
+          className="
+            text-sm font-medium tracking-wider text-white no-underline transition-all duration-500 px-4 py-2 border rounded
+            hover:bg-white hover:text-gray-800
+          "
           onClick={() => openModal()}
         >
           Voir
