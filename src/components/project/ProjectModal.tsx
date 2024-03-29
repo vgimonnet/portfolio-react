@@ -42,11 +42,11 @@ const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
         <div id="overlay" tabIndex={-1} aria-hidden="true" className="flex overflow-y-auto overflow-x-hidden bg-overlay bg-blend-lighten fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-screen ">
           <div className="relative p-4 w-full max-w-2xl max-h-full">
               <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                  <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                  <div className="flex items-center justify-center p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                         {project.title}
                       </h3>
-                      <button type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" onClick={closeModal}>
+                      <button type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white absolute right-4" onClick={closeModal}>
                           <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                           </svg>
@@ -54,15 +54,18 @@ const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
                       </button>
                   </div>
                   <div className="p-4 md:p-5 space-y-4">
-                      <p className="text-base leading-relaxed text-gray-400">
-                        {project.description}
-                      </p>
+                    <img className="rounded border" src={ project.picture } alt={ project.title } />
                   </div>
                   <div className="p-4 md:p-5 border-t rounded-b border-gray-600">
-                    <ul className="flex flex-row flex-wrap items-center justify-center text-gray-400">
+                    <p className="text-base leading-relaxed text-gray-400">
+                      {project.description}
+                    </p>
+                  </div>
+                  <div className="p-4 md:p-5 border-t rounded-b border-gray-600">
+                    <ul className="flex flex-row flex-wrap items-center justify-center text-gray-400 pt-6">
                         { project.technos && project.technos.map((techno: Techno, index: number) => {
                           return (
-                            <li className="w-1/2 flex flex-col justify-center items-center p-4" key={index}>
+                            <li className="w-1/3 flex flex-col justify-center items-center pb-6" key={index}>
                               <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: techno.picture }}></span>
                               <p>{techno.name}</p>
                             </li>
