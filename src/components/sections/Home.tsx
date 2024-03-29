@@ -65,7 +65,7 @@ const Home = () => {
         <span id="tmp" className="invisible">Welcome on my portfolio !</span>
       </h1>
 
-      <img src="public/vg.svg" alt="VG Tag logo" id="logo" className="h-16 transition-all duration-1000" />
+      <img src="vg.svg" alt="VG Tag logo" id="logo" className="h-16 transition-all duration-1000" />
 
       <nav id="nav" className="flex flex-col md:flex-row justify-center gap-8 md:gap-24 mx-auto transition invisible">
         <button onClick={() => setActiveSection('about')} className="bounce px-4 py-2 border border-white rounded w-36">About</button>

@@ -5,7 +5,7 @@ export const PROJECTS: Project[] = [
     title: 'UCA Sport',
     description: 'Outil destiné à la gestion des activité culturelles et sportives de l\'université de Nice. Il permet aux utilisateurs de réserver et payer directement depuis le site. Développement, maintenance et évolution du site.',
     link: 'https://sport.univ-cotedazur.fr/fr/',
-    picture: 'public/projects/uca.png',
+    picture: 'projects/uca.png',
     technos: [
       {
         name: 'Symfony',
@@ -86,7 +86,7 @@ export const PROJECTS: Project[] = [
     title: 'Pulita',
     description: 'Création d\'un outil de dématérialisation et de création de contrats, d\'avenants et de plannings pour une société de nettoyage de plus de 1000 salariés. Développement du site.',
     link: '',
-    picture: 'public/projects/pulita.png',
+    picture: 'projects/pulita.png',
     technos: [
       {
         name: 'Symfony',
@@ -126,7 +126,7 @@ export const PROJECTS: Project[] = [
     title: 'Guichet du Savoir',
     description: 'Le Guichet du Savoir est un service public de la Bibliothèque municipale de Lyon. Il permet aux utilisateurs de poser une question directement aux bibliothécaires et d\'obtenir une réponse détaillée de leur part. Il permet aussi de communiquer entre utilisateurs via un chat interne. Refonte, développement et maintenance du site.',
     link: 'https://www.guichetdusavoir.org/',
-    picture: 'public/projects/gds.png',
+    picture: 'projects/gds.png',
     technos: [
       {
         name: 'Symfony',
@@ -182,7 +182,7 @@ export const PROJECTS: Project[] = [
     title: 'Bitume Online',
     description: 'Bitume Online est un service proposé par TotalEnergies pour permettre à leur collaborateur de passer des commandes de bitume à travers le Monde. Maintenance et évolution du service.',
     link: 'https://www.bitumenonline.com/login',
-    picture: 'public/projects/bol.png',
+    picture: 'projects/bol.png',
     technos: [
       {
         name: 'Symfony',
@@ -238,7 +238,7 @@ export const PROJECTS: Project[] = [
     title: 'Le3Bis',
     description: 'Le3Bis et un bar parisien situé à Bercy. Il propose diverses activités qu\'ils ont toutes développées par eux-même. L\'une d\'elles est un quiz original et dynamique avec différents mode de jeux. Refonte graphique et optimisation des performances de ce dernier.',
     link: '',
-    picture: 'public/projects/3bis.png',
+    picture: 'projects/3bis.png',
     technos: [
       {
         name: 'Vue.js',
@@ -286,7 +286,7 @@ export const PROJECTS: Project[] = [
     title: 'Clap!',
     description: 'Clap! est un outil collaboratif de réalisation de storyboard. Il est proposé par l\'association Par Le Monde qui accompagne et met en relation différentes écoles à travers le Monde. Maintenance et évolution de l\'outil',
     link: 'https://clap.parlemonde.org/create',
-    picture: 'public/projects/clap.png',
+    picture: 'projects/clap.png',
     technos: [
       {
         name: 'Next/React',
@@ -342,7 +342,7 @@ export const PROJECTS: Project[] = [
     title: 'WeImpactCarbon',
     description: 'Extension web et plateforme permettant d\'analyser l\'impact écologique de votre utilisation d\'internet. Maintenance et évolution de l\'extension et du backoffice.',
     link: 'https://weimpactcarbon.wizardstech.io/',
-    picture: 'public/projects/wic.png',
+    picture: 'projects/wic.png',
     technos: [
       {
         name: 'Laravel',
