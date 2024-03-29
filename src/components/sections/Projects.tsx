@@ -9,7 +9,7 @@ const Projects = () => {
   const [showGoUpButton, setShowGoUp] = useState(false);
 
   useEffect(() => {
-    const handleScroll = (event) => {
+    const handleScroll = () => {
       setShowGoUp(window.scrollY > 0);
     };
 

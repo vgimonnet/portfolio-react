@@ -11,6 +11,7 @@ type ProjectModalProps = {
 const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
 
   useEffect(() => {
+    // @ts-expect-error('event type isn't knonw')
     const handleClick = (event) => {
       if (event.target.id === 'overlay') {
         closeModal();
