@@ -10,6 +10,16 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   const [showModal, setShowModal] = useState(false);
 
+  const openModal = () => {
+    document.querySelector('body')?.classList.add('overflow-hidden');
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    document.querySelector('body')?.classList.remove('overflow-hidden');
+    setShowModal(false);
+  };
+
   return (
     <div className="
       flex p-4 gap-4 w-64 text-gray-800
@@ -25,13 +35,13 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </p>
         <button
           className="text-sm font-medium tracking-wider text-gray-800 underline hover:no-underline duration-500"
-          onClick={() => setShowModal(true)}
+          onClick={() => openModal()}
         >
           Voir
         </button>
       </div>
 
-      <ProjectModal isOpen={showModal} closeModal={() => setShowModal(false)} project={project} />
+      <ProjectModal isOpen={showModal} closeModal={closeModal} project={project} />
 
     </div>
   )

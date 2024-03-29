@@ -1,5 +1,6 @@
 import { Transition } from "@headlessui/react";
 import { Project, Techno } from "../../types/project.type";
+import { useEffect } from "react";
 
 type ProjectModalProps = {
   project: Project;
@@ -8,6 +9,24 @@ type ProjectModalProps = {
 }
 
 const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
+
+  useEffect(() => {
+    const handleClick = (event) => {
+      if (event.target.id === 'overlay') {
+        closeModal();
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener('click', handleClick);
+    } else {
+      window.removeEventListener('click', handleClick);
+    }
+
+    return () => {
+      window.removeEventListener('click', handleClick);
+    }
+  });
 
   return (
     <Transition
@@ -20,7 +39,7 @@ const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
-        <div id="default-modal" tabIndex={-1} aria-hidden="true" className="flex overflow-y-auto overflow-x-hidden bg-overlay bg-blend-lighten fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-screen ">
+        <div id="overlay" tabIndex={-1} aria-hidden="true" className="flex overflow-y-auto overflow-x-hidden bg-overlay bg-blend-lighten fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-screen ">
           <div className="relative p-4 w-full max-w-2xl max-h-full">
               <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                   <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
