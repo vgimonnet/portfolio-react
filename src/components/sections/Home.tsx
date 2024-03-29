@@ -5,24 +5,11 @@ const Home = () => {
 
   const INTRO = 'Welcome on my portfolio !';
   const [index, setIndex] = useState(0);
-  // const [age, setAge] = useState(0);
 
   const { setActiveSection } = useContext(activeSectionContext);
 
   const [titleAnimation, setTitleAnimation] = useState(false);
 
-  // useEffect(() => {
-  //   const today = new Date();
-  //   const birthdateDate = new Date('1998/04/21');
-
-  //   let age = today.getFullYear() - birthdateDate.getFullYear();
-  //   const monthDiff = today.getMonth() - birthdateDate.getMonth();
-  //   if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthdateDate.getDate())) {
-  //     age--;
-  //   }
-
-  //   setAge(age);
-  // }, []);
 
   useEffect(() => {
     if (titleAnimation) {

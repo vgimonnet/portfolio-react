@@ -8,6 +8,9 @@ export default {
     extend: {
       colors: {
         'overlay': '#00000080'
+      },
+      width: {
+        about: '450px',
       }
     },
   },
