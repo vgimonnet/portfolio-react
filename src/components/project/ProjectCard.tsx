@@ -22,7 +22,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <div className="
-      flex p-4 gap-4 w-64 text-white
+      flex p-4 gap-4 w-64 text-white z-back
       sm:w-96
       md:w-fit
     ">

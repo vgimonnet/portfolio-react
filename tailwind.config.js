@@ -11,6 +11,9 @@ export default {
       },
       width: {
         about: '450px',
+      },
+      zIndex: {
+        back: '-1',
       }
     },
   },

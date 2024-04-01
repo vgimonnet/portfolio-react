@@ -41,7 +41,7 @@ const About = () => {
     <section id="about" className="h-fit relative flex items-center flex-col my-20 pb-16">
       <h1 
         className="
-          text-4xl lg:text-6xl font-bold relative pb-2
+          text-4xl lg:text-6xl font-bold relative pb-3
           before:content[''] before:absolute before:w-1/2 before:h-1 before:bottom-0 before:left-1/4 before:border before:border-white before:bg-white before:rounded"
       >A propos</h1>
 
@@ -51,7 +51,7 @@ const About = () => {
         Je suis déterminé à créer des expériences utilisateurs de qualité grâce à une programmation centré sur l'éco-conception et l'accessibilité.
       </p>
 
-      <div className="w-full flex flex-col gap-8 mt-8 justify-center md:flex-row">
+      <div className="w-full flex flex-col gap-8 mt-8 justify-center md:flex-row z-back">
 
         <div className="border rounded-xl bg-gray-800 text-white px-4 py-6 flex flex-col items-center w-full gap-4 xl:w-about">
           <p className="text-lg font-bold underline mb-4">Qui suis-je ?</p>

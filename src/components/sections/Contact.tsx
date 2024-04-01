@@ -4,7 +4,7 @@ const Contact = () => {
     <section id="contact" className="h-full relative flex items-center flex-col my-20 ">
       <h1 
         className="
-          text-4xl lg:text-6xl font-bold relative pb-2
+          text-4xl lg:text-6xl font-bold relative pb-3
           before:content[''] before:absolute before:w-1/2 before:h-1 before:bottom-0 before:left-1/4 before:border before:border-white before:bg-white before:rounded"
       >Contact</h1>
 

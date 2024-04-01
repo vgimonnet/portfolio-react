@@ -30,11 +30,20 @@ const Header: FunctionComponent = () => {
       `,
     },
     {
+      label: 'Compétences',
+      anchor: 'aptitudes',
+      svg: `
+        <svg class="w-6 h-6 lg:w-10 lg:h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 3v4a1 1 0 0 1-1 1H5m5 4-2 2 2 2m4-4 2 2-2 2m5-12v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1Z"/>
+        </svg>
+      `,
+    },
+    {
       label: 'Projets',
       anchor: 'projects',
       svg: `
         <svg class="w-6 h-6 lg:w-10 lg:h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 3v4a1 1 0 0 1-1 1H5m5 4-2 2 2 2m4-4 2 2-2 2m5-12v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1Z"/>
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.5 14.5V16.5C4.5 17.0523 4.94772 17.5 5.5 17.5H12.5M4.5 14.5V6.5C4.5 5.94772 4.94772 5.5 5.5 5.5H19.5C20.0523 5.5 20.5 5.94772 20.5 6.5V14.5M4.5 14.5H20.5M20.5 14.5V16.5C20.5 17.0523 20.0523 17.5 19.5 17.5H12.5M12.5 17.5V20.5M12.5 20.5H8M12.5 20.5H17" stroke="currentColor" stroke-width="1.625"></path> </g>
         </svg>
       `,
     },
@@ -72,7 +81,7 @@ const Header: FunctionComponent = () => {
                     key={item.anchor}
                     className={ (activeSection === item.anchor ? 'text-blue-500 font-weight ' : 'text-white') +  " hover:cursor-pointer hover:text-blue-500 w-16 sm:w-20 md:w-24 lg:w-32 font-medium no-underline transition-all duration-500 md:px-4 py-2 rounded flex justify-center items-center md:flex-col gap-1"}>
                       <span dangerouslySetInnerHTML={{ __html: item.svg }}></span>
-                      <span className="hidden md:block">{ item.label }</span>
+                      <span className="hidden lg:block">{ item.label }</span>
                   </li>
                 )
               }) }
