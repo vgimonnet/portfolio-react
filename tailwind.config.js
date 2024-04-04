@@ -14,6 +14,7 @@ export default {
       },
       zIndex: {
         back: '-1',
+        modal: '999999999'
       }
     },
   },

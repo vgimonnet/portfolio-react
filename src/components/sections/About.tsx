@@ -58,9 +58,9 @@ const About = () => {
           <p>Valentin GIMONNET</p>
           <p>{age()} ans</p>
           <ul className="flex flex-row justify-center items-center gap-4">
-            { LANGUAGES.map((language: LANGUAGE) => {
+            { LANGUAGES.map((language: LANGUAGE, index: number) => {
               return (
-                <li className="flex flex-col justify-center items-center gap-2">
+                <li className="flex flex-col justify-center items-center gap-2" key={index}>
                   <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: language.flag}}></span>
                   <p>{language.lang}</p>
                 </li>

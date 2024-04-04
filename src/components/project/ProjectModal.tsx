@@ -1,14 +1,11 @@
 import { Transition } from "@headlessui/react";
-import { Project, Techno } from "../../types/project.type";
-import { useEffect } from "react";
+import { Techno } from "../../types/project.type";
+import { useContext, useEffect } from "react";
+import { projectModalContext } from "../../context/ProjectModalContext";
 
-type ProjectModalProps = {
-  project: Project;
-  isOpen: boolean;
-  closeModal: () => void;
-}
+const ProjectModal = () => {
 
-const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
+  const { isOpen, setIsOpen, project, setProject } = useContext(projectModalContext);
 
   useEffect(() => {
     // @ts-expect-error('event type isn't knonw')
@@ -29,10 +26,16 @@ const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
     }
   });
 
+  const closeModal = () => {
+    document.querySelector('body')?.classList.remove('overflow-hidden');
+    setIsOpen(false);
+    setProject(undefined);
+  }
+
   return (
     <Transition
-      className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-screen"
-      show={isOpen}
+      className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-modal justify-center items-center w-full md:inset-0 h-screen"
+      show={isOpen }
       enter="transition-all ease-in-out duration-500 delay-[150ms]"
       enterFrom="opacity-0 translate-y-6"
       enterTo="opacity-100 translate-y-0"
@@ -45,7 +48,7 @@ const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
               <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                   <div className="flex items-center justify-center p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                        {project.title}
+                        {project?.title}
                       </h3>
                       <button type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white absolute right-4" onClick={closeModal}>
                           <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -55,16 +58,16 @@ const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
                       </button>
                   </div>
                   <div className="p-4 md:p-5 space-y-4">
-                    <img className="rounded border" src={ project.picture } alt={ project.title } loading="lazy" />
+                    <img className="rounded border" src={ project?.picture } alt={ project?.title } loading="lazy" />
                   </div>
                   <div className="p-4 md:p-5 border-t rounded-b border-gray-600">
                     <p className="text-base leading-relaxed text-gray-400">
-                      {project.description}
+                      {project?.description}
                     </p>
                   </div>
                   <div className="p-4 md:p-5 border-t rounded-b border-gray-600">
                     <ul className="flex flex-row flex-wrap items-center justify-center text-gray-400 pt-6">
-                        { project.technos && project.technos.map((techno: Techno, index: number) => {
+                        { project?.technos && project?.technos.map((techno: Techno, index: number) => {
                           return (
                             <li className="w-1/3 flex flex-col justify-center items-center pb-6" key={index}>
                               <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: techno.picture }}></span>
@@ -75,15 +78,15 @@ const ProjectModal = ({ project, isOpen, closeModal }: ProjectModalProps) => {
                       </ul>
                   </div>
                   <div className="flex items-center justify-center p-4 md:p-5 border-t rounded-b border-gray-600">
-                    { project.link && 
+                    { project?.link && 
                       <a
-                        href={project.link} 
+                        href={project?.link} 
                         target="_blank"
                         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                           Voir le site web
                       </a>
                     }
-                    { !project.link && (
+                    { !project?.link && (
                       <p className="text-gray-400">Site web à accès restreint</p>
                     ) }
                   </div>

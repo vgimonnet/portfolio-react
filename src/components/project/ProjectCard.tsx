@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Project } from "../../types/project.type"
 import ProjectModal from "./ProjectModal";
+import { projectModalContext } from "../../context/ProjectModalContext";
 
 type ProjectCardProps = {
   project: Project;
@@ -8,16 +9,12 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
 
-  const [showModal, setShowModal] = useState(false);
+  const { setIsOpen, setProject } = useContext(projectModalContext);
 
   const openModal = () => {
     document.querySelector('body')?.classList.add('overflow-hidden');
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    document.querySelector('body')?.classList.remove('overflow-hidden');
-    setShowModal(false);
+    setProject(project);
+    setIsOpen(true);
   };
 
   return (
@@ -44,9 +41,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           Voir
         </button>
       </div>
-
-      <ProjectModal isOpen={showModal} closeModal={closeModal} project={project} />
-
     </div>
   )
 }
