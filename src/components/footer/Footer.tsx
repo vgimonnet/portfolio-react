@@ -1,8 +1,6 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { Transition } from "@headlessui/react";
-
-import { activeSectionContext } from "../../context/ActiveSectionContext";
 
 const LANGUAGES = {
   fr: `
@@ -21,7 +19,6 @@ const Footer = () => {
 
   const { i18n } = useTranslation();
   const [flag, setFlag] = useState(i18n.language === 'fr' ? LANGUAGES['fr'] : LANGUAGES['en']);
-  const { activeSection } = useContext(activeSectionContext);
 
   console.log(i18n.language);
 
