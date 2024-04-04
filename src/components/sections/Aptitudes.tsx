@@ -41,7 +41,7 @@ const Aptitudes = () => {
       >Compétences</h1>
 
       <p className="mt-16">
-        En complément des languages classiques du web que sont HTML / CSS / Javascript et PHP, voici les autres technologies et compétences que je maîtrise :
+        En complément des languages classiques du web que sont <u>HTML / CSS / Javascript et PHP</u>, voici les autres technologies et compétences que je maîtrise :
       </p>
 
       <div className="w-full flex flex-col gap-8 mt-8 justify-center md:flex-row md:flex-wrap z-back">
