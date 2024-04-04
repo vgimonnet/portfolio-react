@@ -11,7 +11,10 @@ function App() {
   return (
     <>
       <ProjectModalContextProvider>
-        <div className="fixed h-screen w-screen border"></div>
+        <div className="fixed top-0 h-0.5 w-screen border-t z-50"></div>
+        <div className="fixed right-0 h-screen w-0.5 border-r z-50"></div>
+        <div className="fixed bottom-0 h-0.5 w-screen border-b z-50"></div>
+        <div className="fixed left-0 h-screen w-0.5 border-l z-50"></div>
         <ActiveSectionContextProvider>
           <Header />
           <Main />
