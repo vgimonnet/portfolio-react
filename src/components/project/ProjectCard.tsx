@@ -1,6 +1,5 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Project } from "../../types/project.type"
-import ProjectModal from "./ProjectModal";
 import { projectModalContext } from "../../context/ProjectModalContext";
 
 type ProjectCardProps = {
