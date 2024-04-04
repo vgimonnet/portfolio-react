@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Project } from "../../types/project.type"
 import { projectModalContext } from "../../context/ProjectModalContext";
+import { useTranslation } from 'react-i18next';
 
 type ProjectCardProps = {
   project: Project;
@@ -9,6 +10,7 @@ type ProjectCardProps = {
 const ProjectCard = ({ project }: ProjectCardProps) => {
 
   const { setIsOpen, setProject } = useContext(projectModalContext);
+  const { t } = useTranslation();
 
   const openModal = () => {
     document.querySelector('body')?.classList.add('overflow-hidden');
@@ -28,7 +30,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           { project.title }
         </h1>
         <p className="text-sm font-medium tracking-wider line-clamp-3 h-16">
-          { project.description }
+          { t(project.description) }
         </p>
         <button
           className="
@@ -37,7 +39,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           "
           onClick={() => openModal()}
         >
-          Voir
+          { t('action.see') }
         </button>
       </div>
     </div>

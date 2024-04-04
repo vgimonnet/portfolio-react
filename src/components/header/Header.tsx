@@ -1,6 +1,7 @@
 import { FunctionComponent, useContext } from "react";
 import { activeSectionContext } from "../../context/ActiveSectionContext";
 import { Transition } from "@headlessui/react";
+import { useTranslation } from 'react-i18next';
 
 type HeaderItem = {
   label: string;
@@ -60,6 +61,8 @@ const Header: FunctionComponent = () => {
 
   const { activeSection, setActiveSection } = useContext(activeSectionContext);
 
+  const { t } = useTranslation();
+
   return (
     <>
       <Transition
@@ -81,7 +84,7 @@ const Header: FunctionComponent = () => {
                     key={item.anchor}
                     className={ (activeSection === item.anchor ? 'text-blue-500 font-weight ' : 'text-white') +  " hover:cursor-pointer hover:text-blue-500 w-16 sm:w-20 md:w-24 lg:w-32 font-medium no-underline transition-all duration-500 md:px-4 py-2 rounded flex justify-center items-center md:flex-col gap-1"}>
                       <span dangerouslySetInnerHTML={{ __html: item.svg }}></span>
-                      <span className="hidden lg:block">{ item.label }</span>
+                      <span className="hidden lg:block">{ t('header.' + item.anchor) }</span>
                   </li>
                 )
               }) }

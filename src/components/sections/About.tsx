@@ -1,7 +1,9 @@
+import { useTranslation } from 'react-i18next';
+
 type LANGUAGE = {
   flag: string;
   lang: string;
-}
+};
 
 const LANGUAGES: LANGUAGE[] = [
   {
@@ -20,9 +22,11 @@ const LANGUAGES: LANGUAGE[] = [
     `,
     lang: 'Anglais'
   }
-]
+];
 
 const About = () => {
+
+  const { t } = useTranslation();
 
   const age = () => {
     const today = new Date();
@@ -43,20 +47,20 @@ const About = () => {
         className="
           text-4xl lg:text-6xl font-bold relative pb-3
           before:content[''] before:absolute before:w-1/2 before:h-1 before:bottom-0 before:left-1/4 before:border before:border-white before:bg-white before:rounded"
-      >A propos</h1>
+      >{ t('header.about') }</h1>
 
       <p className="mt-16">
-        Développeur web passionné avec une expertise approfondie dans la conception, le développement et la maintenance de sites web interactifs.
+        { t('section.about.intro_start') }
         <br />
-        Je suis déterminé à créer des expériences utilisateurs de qualité grâce à une programmation centré sur l'éco-conception et l'accessibilité.
+        { t('section.about.intro_end') }
       </p>
 
       <div className="w-full flex flex-col gap-8 mt-8 justify-center md:flex-row z-back">
 
         <div className="border rounded-xl bg-gray-800 text-white px-4 py-6 flex flex-col items-center w-full gap-4 xl:w-about">
-          <p className="text-lg font-bold underline mb-4">Qui suis-je ?</p>
+          <p className="text-lg font-bold underline mb-4">{ t('section.about.who_am_i.title') }</p>
           <p>Valentin GIMONNET</p>
-          <p>{age()} ans</p>
+          <p>{age()} { t('section.about.who_am_i.old') }</p>
           <ul className="flex flex-row justify-center items-center gap-4">
             { LANGUAGES.map((language: LANGUAGE, index: number) => {
               return (
@@ -70,37 +74,37 @@ const About = () => {
         </div>
         
         <div className="border rounded-xl bg-gray-800 text-white px-4 py-6 flex flex-col items-center w-full gap-4 xl:w-about">
-          <p className="text-lg font-bold underline mb-4">Formations</p>
+          <p className="text-lg font-bold underline mb-4">{ t('section.about.formations.title') }</p>
           <ul className="flex flex-col justify-center items-center gap-4">
             <li>
-              <p className="text-center"><b>Master Développement Web</b></p>
+              <p className="text-center"><b>{ t('section.about.formations.master') }</b></p>
               <p className="text-center">2020-2022 - ECV Digital (Paris)</p>
             </li>
             <li>
-              <p className="text-center"><b>LP Web et Mobile</b></p>
+              <p className="text-center"><b>{ t('section.about.formations.lp') }</b></p>
               <p className="text-center">2019-2020 - IUT (Orléans)</p>
             </li>
             <li>
-              <p className="text-center"><b>BTS SNIR</b></p>
-              <p className="text-center">2017-2019 - Lycée Henir Brisson (Vierzon)</p>
+              <p className="text-center"><b>{ t('section.about.formations.bts') }</b></p>
+              <p className="text-center">2017-2019 - Lycée Henri Brisson (Vierzon)</p>
             </li>
           </ul>
         </div>
 
         <div className="border rounded-xl bg-gray-800 text-white px-4 py-6 flex flex-col items-center w-full gap-4 xl:w-about">
-          <p className="text-lg font-bold underline mb-4">Certifications</p>
+          <p className="text-lg font-bold underline mb-4">{ t('section.about.certifications.title') }</p>
           <ul className="flex flex-col justify-center items-center gap-4">
             <li className="flex flex-col justify-center items-center">
               <p className="text-center"><b>GREEN.IT</b></p>
-              <p className="text-center">2022 - Eco-conception</p>
+              <p className="text-center">2022 - { t('section.about.certifications.greenit') }</p>
             </li>
             <li className="flex flex-col justify-center items-center">
               <p className="text-center"><b>OPQUAST IV</b></p>
-              <p className="text-center">2022 - Qualité web et accessibilité</p>
+              <p className="text-center">2022 - { t('section.about.certifications.opquast') }</p>
             </li>
             <li className="flex flex-col justify-center items-center">
               <p className="text-center"><b>VOLTAIRE III</b></p>
-              <p className="text-center">2022 - Langue française</p>
+              <p className="text-center">2022 - { t('section.about.certifications.voltaire') }</p>
             </li>
           </ul>
         </div>

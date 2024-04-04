@@ -1,15 +1,17 @@
 import { useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { activeSectionContext } from '../../context/ActiveSectionContext';
 
 const Home = () => {
 
-  const INTRO = 'Welcome on my portfolio !';
+  const { t } = useTranslation();
+  const [loading, setLoading] = useState<boolean>(true);
   const [index, setIndex] = useState(0);
-
   const { setActiveSection } = useContext(activeSectionContext);
-
   const [titleAnimation, setTitleAnimation] = useState(false);
 
+  const INTRO = t('section.home.intro');
 
   useEffect(() => {
     if (titleAnimation) {
@@ -36,8 +38,22 @@ const Home = () => {
     }
     
     return () => {};
-  }, [index, titleAnimation])
+  }, [index, titleAnimation, INTRO])
 
+  useEffect(() => {
+    if (loading) {
+      setTimeout(() => setLoading(false), 3000);
+    }
+
+    if (!loading) {
+      const title = document.getElementById('title-container');
+      if (title) {
+        title.innerHTML = INTRO;
+      }
+    }
+
+    return () => {};
+  }, [loading, INTRO]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -62,16 +78,16 @@ const Home = () => {
           xl:text-7xl
         "
       >
-        <span id="tmp" className="invisible">Bienvenue sur mon portfolio !</span>
+        <span id="tmp" className="invisible">{ t('section.home.intro') }</span>
       </h1>
 
       <img src="vg.svg" alt="VG Tag logo" id="logo" className="h-16 transition-all duration-1000" />
 
       <nav id="nav" className="flex flex-col lg:flex-row justify-center gap-8 lg:gap-24 mx-auto transition invisible">
-        <button onClick={() => setActiveSection('about')} className="bounce px-4 py-2 border border-white rounded w-36">A propos</button>
-        <button onClick={() => setActiveSection('aptitudes')}  className="bounce px-4 py-2 border border-white rounded w-36">Compétences</button>
-        <button onClick={() => setActiveSection('projects')}  className="bounce px-4 py-2 border border-white rounded w-36">Projets</button>
-        <button onClick={() => setActiveSection('contact')} className="bounce px-4 py-2 border border-white rounded w-36">Contact</button>
+        <button onClick={() => setActiveSection('about')} className="bounce px-4 py-2 border border-white rounded w-36">{ t('header.about') }</button>
+        <button onClick={() => setActiveSection('aptitudes')}  className="bounce px-4 py-2 border border-white rounded w-36">{ t('header.aptitudes') }</button>
+        <button onClick={() => setActiveSection('projects')}  className="bounce px-4 py-2 border border-white rounded w-36">{ t('header.projects') }</button>
+        <button onClick={() => setActiveSection('contact')} className="bounce px-4 py-2 border border-white rounded w-36">{ t('header.contact') }</button>
       </nav>
     </section>
   )

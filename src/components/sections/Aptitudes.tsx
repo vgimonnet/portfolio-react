@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { BACKEND, DATABASE, FRONTEND, OTHERS } from "../../data/aptitudes.data";
 import { Techno } from "../../types/project.type";
 
@@ -32,16 +34,18 @@ const APTITUDES: APTITUDE[] = [
 
 const Aptitudes = () => {
 
+  const { t } = useTranslation();
+
   return (
     <section id="aptitudes" className="h-fit relative flex items-center flex-col my-20 pb-16">
       <h1 
         className="
           text-4xl lg:text-6xl font-bold relative pb-3
           before:content[''] before:absolute before:w-1/2 before:h-1 before:bottom-0 before:left-1/4 before:border before:border-white before:bg-white before:rounded"
-      >Compétences</h1>
+      >{ t('header.aptitudes') }</h1>
 
       <p className="mt-16">
-        En complément des languages classiques du web que sont <u>HTML / CSS / Javascript et PHP</u>, voici les autres technologies et compétences que je maîtrise :
+        { t('section.aptitudes.intro_start') }<u>{ t('section.aptitudes.intro_middle') }</u>{ t('section.aptitudes.intro_end') }
       </p>
 
       <div className="w-full flex flex-col gap-8 mt-8 justify-center md:flex-row md:flex-wrap z-back">

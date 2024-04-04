@@ -1,0 +1,60 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "aptitudes": "Aptitudes",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "action": {
+    "see": "See",
+    "close-modal": "Close modal",
+    "go": "Go to website",
+    "restricted": "Access to website restricted"
+  },
+  "section": {
+    "about": {
+      "intro_start": "Passionate web developer with deep expertise in the design, development and maintenance of interactive websites.",
+      "intro_end": "I am determined to create quality user experiences through programming focused on eco-design and accessibility.",
+      "who_am_i": {
+        "title": "Who am i ?",
+        "old": "years old"
+      }
+    },
+    "formations": {
+      "title": "Formations",
+      "master": "Web Developement Master",
+      "lp": "LP Web and Mobile",
+      "bts": "BTS SNIR"
+    },
+    "certifications": {
+      "title": "Certifications",
+      "greenit": "Ecodesign",
+      "opquast": "Web quality and accessibility",
+      "voltaire": "French language"
+    },
+    "aptitudes": {
+      "intro_start": "In addition to classic web languages such as ",
+      "intro_middle": "HTML / CSS / Javascript and PHP",
+      "intro_end": ", here are the other technologies and skills that I master:"
+    },
+    "contact": {
+      "email": "Email",
+      "github": "Github",
+      "linkedin": "Linkedin"
+    },
+    "home": {
+      "intro": "Welcome on my portfolio !"
+    },
+    "projects": {}
+  },
+  "projects": {
+    "bitumen": "Bitume Online is a service offered by TotalEnergies to allow their employees to place orders for bitumen throughout the world. Maintenance and evolution of the service.",
+    "clap": "Clap! is a collaborative storyboard creation tool. It is offered by the Par Le Monde association which supports and connects different schools around the world. Maintenance and evolution of the tool.",
+    "gds": "The Guichet du Savoir is a public service of the Lyon Municipal Library. It allows users to ask a question directly to librarians and get a detailed answer from them. It also allows users to communicate via an internal chat. Redesign, development and maintenance of the site.",
+    "le3bis": "Le3Bis and a Parisian bar located in Bercy. It offers various activities that they have all developed on their own. One of them is an original and dynamic quiz with different game modes. Graphical redesign and performance optimization.",
+    "pulita": "Creation of a tool for dematerialization and creation of contracts, amendments and schedules for a cleaning company with more than 1000 employees. Site development.",
+    "uca": "Tool intended for the management of cultural and sporting activities at the University of Nice. It allows users to book and pay directly from the site. Development, maintenance and evolution of the site.",
+    "wic": "Web extension and platform allowing you to analyze the ecological impact of your internet use. Maintenance and evolution of the extension and the backoffice."
+  }
+}

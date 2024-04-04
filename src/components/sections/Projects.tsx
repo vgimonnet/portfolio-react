@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
+import { Transition } from "@headlessui/react";
+
 import { PROJECTS } from "../../data/projects.data";
 import { Project } from "../../types/project.type";
 import ProjectCard from "../project/ProjectCard";
-import { Transition } from "@headlessui/react";
 
 const Projects = () => {
 
+  const { t } = useTranslation();
   const [showGoUpButton, setShowGoUp] = useState(false);
 
   useEffect(() => {
@@ -30,7 +33,7 @@ const Projects = () => {
         className="
           text-4xl lg:text-6xl font-bold relative pb-3
           before:content[''] before:absolute before:w-1/2 before:h-1 before:bottom-0 before:left-1/4 before:border before:border-white before:bg-white before:rounded"
-      >Projets</h1>
+      >{ t('header.projects') }</h1>
 
       <div className="
         flex flex-col flex-no-wrap items-center w-full rounded mt-10 pb-20
