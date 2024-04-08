@@ -19,19 +19,19 @@
       "who_am_i": {
         "title": "Who am i ?",
         "old": "years old"
+      },
+      "formations": {
+        "title": "Formations",
+        "master": "Web Developement Master",
+        "lp": "LP Web and Mobile",
+        "bts": "BTS SNIR"
+      },
+      "certifications": {
+        "title": "Certifications",
+        "greenit": "Ecodesign",
+        "opquast": "Web quality and accessibility",
+        "voltaire": "French language"
       }
-    },
-    "formations": {
-      "title": "Formations",
-      "master": "Web Developement Master",
-      "lp": "LP Web and Mobile",
-      "bts": "BTS SNIR"
-    },
-    "certifications": {
-      "title": "Certifications",
-      "greenit": "Ecodesign",
-      "opquast": "Web quality and accessibility",
-      "voltaire": "French language"
     },
     "aptitudes": {
       "intro_start": "In addition to classic web languages such as ",
